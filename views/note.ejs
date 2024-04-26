@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-800 text-white flex justify-center items-center">
+        <div id="container" class="w-[60vw] h-[80vh] shadow-lg shadow-black-700 rounded-md bg-zinc-900 relative ">
+            <h1 class="text-center text-3xl uppercase font-bold mt-10">Note app</h1>
+            <a href="/" class="text-blue-600 text-xs absolute left-14 top-[20%] flex items-center"><span class="text-xl border border-transparent"><i class="ri-arrow-drop-left-line"></i></span> Back</a>
+            <div class="w-[35vw] h-[40vh] absolute top-[18%] left-[20%] p-4  rounded-lg px-8">
+                <h1 class="text-2xl capitalize "><%= name.split('.')[0]  %></h1>
+                <p class="text-white/70 text-sm mt-5 "><%= data  %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

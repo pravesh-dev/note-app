@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-800 text-white flex justify-center items-center">
+        <div id="container" class="w-[30vw] h-[80vh] border-r border-black/40 bg-white/10">
+            <h1 class="text-center text-3xl uppercase font-bold mt-10">Note app</h1>
+            <form action="/create" method="post" class="pt-14 w-[85%] h-[60vh] mx-auto">
+                <input type="text" name="title" placeholder="Enter title here" class="w-full h-12 outline-none bg-zinc-600 pl-4 rounded-md">
+                <textarea name="data" class="w-full h-40 outline-none bg-zinc-600 p-4 mt-4 resize-none  rounded-md" placeholder="Enter note here...."></textarea>
+                <button type="submit" class="bg-[#0066FF] px-3 py-1 rounded-md mt-2 float-right">Save Note</button>
+            </form>
+        </div>
+        <div id="container2" class="w-[60vw] h-[80vh]  bg-white/10">
+            <h1 class="text-center text-3xl uppercase font-bold mt-10">ALL NOTES</h1>
+            <div class="w-[85%] h-[85%]  mx-auto p-5 mt-3  flex flex-wrap gap-3 items-start relative">
+                <% if(files.length > 0){ %>
+                    <% files.forEach((item)=>{ %>
+                        <div class="task py-3 px-5 bg-zinc-800/90 rounded-md flex flex-col w-max">
+                            <h2><%= item.split('.')[0]%></h2>
+                            <a href='/files/<%= item %>' class="text-blue-700 font-light text-xs">Read more</a>
+                        </div>
+                    <% }) %>
+               <% }else{ %>
+                <h2 class="text-sm font-light absolute top-[45%] left-[40%]">No notes here yet!</h2>
+              <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
